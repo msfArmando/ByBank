@@ -6,27 +6,33 @@ using System.Threading.Tasks;
 
 namespace ByBank.Funcionarios
 {
-    public class Funcionario
+    public abstract class Funcionario
     {
         public static int TotalDeFuncionarios { get; private set; }
 
         public string Nome { get; set; }
         public string CPF { get; private set; }
-        public double Salario { get; set; }
+        public double Salario { get; protected set; }
 
-        public Funcionario(string cpf) 
+        public Funcionario(double salario, string cpf) 
         {
             Console.WriteLine("Criando funcionário");
 
             CPF = cpf;
+            Salario = salario;
 
             TotalDeFuncionarios++;
         }
 
-        public virtual double GetBonificacao()
+        public Funcionario(string cpf)
         {
-            return Salario * 0.10;
+            TotalDeFuncionarios++;
+            CPF = cpf;
         }
+
+        public abstract void AumentarSalario();
+
+        public abstract double GetBonificacao();
 
         /*public void Teste(double a, int b)
         {
@@ -36,5 +42,7 @@ namespace ByBank.Funcionarios
         {
             Console.WriteLine("Teste(int, double)");
         }*/
+
+        public static int TotalFuncionarios { get; private set; }
     }
 }

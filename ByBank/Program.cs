@@ -11,35 +11,33 @@ namespace ByBank
     {
         static void Main(string[] args)
         {
-            GerenciadorBonificacao gerenciador = new GerenciadorBonificacao();
-
-            Diretor eduarda = new Diretor("154.456.457-51");
-            eduarda.Nome = "Eduarda";
-            //eduarda.CPF =;
-            eduarda.Salario = 3000;
-
-            Funcionario eduardateste = eduarda;
-
-            gerenciador.Registrar(eduarda);
-            Console.WriteLine("Bonificação de Duda(Diretora)");
-            Console.WriteLine(eduarda.GetBonificacao());
-            Console.WriteLine("Bonificação de Duda(Funcionária)");
-            Console.WriteLine(eduardateste.GetBonificacao());
-
-            Funcionario joshua = new Funcionario("354.156.458-52");
-            joshua.Nome = "Joshua";
-            joshua.Salario = 1500;
-
-            gerenciador.Registrar(joshua);
-            Console.WriteLine("Bonificação de Joshua");
-            Console.WriteLine(joshua.GetBonificacao());
-
-            Console.WriteLine("Total de bonificações");
-            Console.WriteLine(gerenciador.GetTotalBonificacao());
-
-            //joshua.Teste(1, 2);
+            CalcularBonificacao();
 
             Console.ReadLine();
+        }
+
+        public static void CalcularBonificacao()
+        {
+            GerenciadorBonificacao gerenciadorBonificacao = new GerenciadorBonificacao();
+            
+            Designer pedro = new Designer("154.654.263-15");
+            pedro.Nome = "Pedro";
+
+            Diretor gustavo = new Diretor("654.178.564-87");
+            gustavo.Nome = "Gustavo";
+
+            Auxiliar cleiton = new Auxiliar("651.684.123-78");
+            cleiton.Nome = "Cleiton";
+
+            GerenteDeConta armando = new GerenteDeConta("111.632.395 - 15");
+            armando.Nome = "Armando";
+
+            gerenciadorBonificacao.Registrar(pedro);
+            gerenciadorBonificacao.Registrar(gustavo);
+            gerenciadorBonificacao.Registrar(cleiton);
+            gerenciadorBonificacao.Registrar(armando);
+
+            Console.WriteLine("Total de bonificações do mês: " + gerenciadorBonificacao.GetTotalBonificacao());
         }
     }
 }
