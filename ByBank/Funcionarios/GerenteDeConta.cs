@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ByBank.Sistemas;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ByBank.Funcionarios
 {
-    internal class GerenteDeConta : Funcionario
+    internal class GerenteDeConta : FuncionarioAutenticavel
     {
         public GerenteDeConta(string cpf) : base(4000, cpf)
         {

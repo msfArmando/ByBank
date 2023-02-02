@@ -1,4 +1,5 @@
 ﻿using ByBank.Funcionarios;
+using ByBank.Sistemas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,34 @@ namespace ByBank
     {
         static void Main(string[] args)
         {
-            CalcularBonificacao();
+            // CalcularBonificacao();
+
+            UsarSistema();
 
             Console.ReadLine();
+        }
+
+        public static void UsarSistema()
+        {
+            SistemaInterno sistemaInterno= new SistemaInterno();
+            Diretor gustavo = new Diretor("654.178.564-87");
+            gustavo.Nome = "Gustavo";
+            gustavo.Senha = "154";
+
+            Designer pedro = new Designer("154.654.263-15");
+            pedro.Nome = "Pedro";
+
+            GerenteDeConta armando = new GerenteDeConta("111.632.395 - 15");
+            armando.Nome = "Armando";
+            armando.Senha = "541";
+
+            ParceiroComercial parceiro = new ParceiroComercial();
+            parceiro.Senha = "123456";
+
+            sistemaInterno.Logar(parceiro, "1547");
+            sistemaInterno.Logar(gustavo, "154");
+            sistemaInterno.Logar(armando, "541");
+
         }
 
         public static void CalcularBonificacao()
