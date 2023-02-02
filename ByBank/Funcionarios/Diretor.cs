@@ -12,9 +12,14 @@ namespace ByBank.Funcionarios
         public string CPF { get; set; }
         public double Salario { get; set; }*/
 
+        public Diretor(string cpf) : base(cpf) //No momento que eu to chamando o construtor da classe base to passando adiante o argumento cpf
+        {                                      //Passa argumentos pra classe base 
+            Console.WriteLine("Criando diretor!"); //O : vai chamar a base (funcionário) os dois pontos dizem que construtor diretor vai chamar o construtor
+        }                                          //Da classe base antes de tudo
+
         public override double GetBonificacao()
         {
-            return Salario;
+            return Salario + base.GetBonificacao();
         }
     }
 }

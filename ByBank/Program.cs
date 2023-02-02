@@ -13,9 +13,9 @@ namespace ByBank
         {
             GerenciadorBonificacao gerenciador = new GerenciadorBonificacao();
 
-            Diretor eduarda = new Diretor();
+            Diretor eduarda = new Diretor("154.456.457-51");
             eduarda.Nome = "Eduarda";
-            eduarda.CPF = "154.456.457-51";
+            //eduarda.CPF =;
             eduarda.Salario = 3000;
 
             Funcionario eduardateste = eduarda;
@@ -26,9 +26,8 @@ namespace ByBank
             Console.WriteLine("Bonificação de Duda(Funcionária)");
             Console.WriteLine(eduardateste.GetBonificacao());
 
-            Funcionario joshua = new Funcionario();
+            Funcionario joshua = new Funcionario("354.156.458-52");
             joshua.Nome = "Joshua";
-            joshua.CPF = "354.156.458-52";
             joshua.Salario = 1500;
 
             gerenciador.Registrar(joshua);
